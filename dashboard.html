@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styledash.css">
+</head>
+<body>
+    <!-- Menu suspenso -->
+
+    <div class="header">
+        <h1>Bem-vindo ao Painel do Mentorado</h1>
+        <p>Explore as funcionalidades disponíveis para seu aprendizado e crescimento.</p>
+    </div>
+
+    <div class="main-content">
+        <section id="mentores">
+            <h2>Mentores Recomendados</h2>
+            <div class="mentor-list">
+                <div class="mentor-card">
+                    <h3>Carla Silva</h3>
+                    <p>Especialista em Marketing Digital</p>
+                    <button class="ver-perfil-btn" data-perfil="perfilmentor.html">Ver Perfil</button>
+                </div>
+                <div class="mentor-card">
+                    <h3>João Almeida</h3>
+                    <p>Consultor de DevOps</p>
+                    <button class="ver-perfil-btn" data-perfil="perfilmentor.html">Ver Perfil</button>
+                </div>
+                <div class="mentor-card">
+                    <h3>Ana Costa</h3>
+                    <p>Desenvolvedora Full Stack</p>
+                    <button class="ver-perfil-btn" data-perfil="perfilmentor.html">Ver Perfil</button>
+                </div>
+            </div>
+        </section>
+    
+
+        <section id="perfil">
+            <h2>Perfil do Mentor</h2>
+            <div id="perfil-conteudo">
+                <!-- O conteúdo do perfil será carregado aqui -->
+            </div>
+        </section>
+
+        <section id="aplicacoes">
+            <h2>Suas Aplicações</h2>
+            <p>Você não possui nenhuma aplicação no momento.</p>
+        </section>
+
+        <section id="consultas">
+            <h2>Consultas Agendadas</h2>
+            <p>Você não possui consultas agendadas no momento.</p>
+        </section>
+    </div>
+
+    <script>
+        document.querySelectorAll('.ver-perfil-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const perfilUrl = button.getAttribute('data-perfil');
+                fetch(perfilUrl)
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('perfil-conteudo').innerHTML = data;
+                        window.location.hash = '#perfil'; // Rola para a seção de perfil
+                    })
+                    .catch(error => {
+                        console.error('Erro ao carregar o perfil:', error);
+                    });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<h1>Cadastro de Mentor</h1>
+<form id="cadastro-mentor">
+    <input type="text" name="nome" placeholder="Nome" required />
+    <input type="text" name="sobrenome" placeholder="Sobrenome" required />
+    <input type="email" name="email" placeholder="E-mail" required />
+    <input type="password" name="senha" placeholder="Senha" required />
+    <input type="text" name="cargo" placeholder="Cargo" required />
+    <input type="text" name="categoria" placeholder="Categoria" required />
+    <textarea name="biografia" placeholder="Biografia"></textarea>
+    <textarea name="habilidade" placeholder="Habilidade"></textarea>
+    <button type="submit">Cadastrar</button>
+</form>
+
+<script>
+    document.getElementById('cadastro-mentor').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData);
+
+        const response = await fetch('http://localhost:3000/cadastro/mentor', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.text();
+        alert(result);
+    });
+</script>

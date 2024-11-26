@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de Perfil de Mentor</title>
+    <link rel="stylesheet" href="styleform.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Criação de Perfil do Mentor</h1>
+        </header>
+
+        <form id="mentor-profile-form">
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" placeholder="Digite o nome do mentor" required>
+            </div>
+
+            <div class="form-group">
+                <label for="specialty">Especialidade:</label>
+                <input type="text" id="specialty" name="specialty" placeholder="Digite a especialidade" required>
+            </div>
+
+            <div class="form-group">
+                <label for="experience">Experiência:</label>
+                <textarea id="experience" name="experience" placeholder="Descreva a experiência do mentor" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Localização:</label>
+                <input type="text" id="location" name="location" placeholder="Digite a localização" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bio">Sobre:</label>
+                <textarea id="bio" name="bio" placeholder="Escreva uma descrição sobre o mentor" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Digite o e-mail de contato" required>
+            </div>
+
+            <div class="form-group">
+                <label for="linkedin">LinkedIn:</label>
+                <input type="url" id="linkedin" name="linkedin" placeholder="Digite o link do perfil do LinkedIn">
+            </div>
+
+            <div class="form-group">
+                <label for="profile-picture">Foto de Perfil:</label>
+                <input type="file" id="profile-picture" name="profile-picture" accept="image/*">
+            </div>
+
+            <button type="submit">Salvar Perfil</button>
+        </form>
+
+        <footer>
+            <p>&copy; 2024 Mentorship Platform. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('mentor-profile-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio do formulário para permitir manipulações
+
+            const formData = new FormData(this);
+
+            // Simulando o envio dos dados para o backend
+            console.log('Dados enviados:');
+            for (let [key, value] of formData.entries()) {
+                console.log(`${key}: ${value}`);
+            }
+
+            alert('Perfil criado com sucesso!');
+        });
+    </script>
+</body>
+</html>

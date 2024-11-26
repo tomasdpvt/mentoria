@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Mentor</title>
+    <link rel="stylesheet" href="styleperfil.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Perfil do Mentor</h1>
+        </header>
+
+        <section class="mentor-info">
+            <div class="profile-picture">
+                <img src="imagem-mentor.jpg" alt="Foto do Mentor">
+            </div>
+            <div class="details">
+                <h2>Nome: João Almeida</h2>
+                <p><strong>Especialidade:</strong> Consultor de DevOps</p>
+                <p><strong>Experiência:</strong> Mais de 10 anos atuando em projetos de infraestrutura e automação de pipelines.</p>
+                <p><strong>Localização:</strong> São Paulo, Brasil</p>
+            </div>
+        </section>
+
+        <section class="bio">
+            <h3>Sobre</h3>
+            <p>
+                João Almeida é um mentor dedicado com vasta experiência em DevOps. Ele ajudou várias empresas a
+                otimizarem seus processos de desenvolvimento e entrega de software. João acredita em práticas
+                colaborativas e está sempre disposto a compartilhar seu conhecimento com a próxima geração de
+                profissionais de tecnologia.
+            </p>
+        </section>
+
+        <section class="contact">
+            <h3>Entre em Contato</h3>
+            <ul>
+                <li><strong>E-mail:</strong> joao.almeida@example.com</li>
+                <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/joaoalmeida">linkedin.com/in/joaoalmeida</a></li>
+            </ul>
+        </section>
+        <section class="chat-section">
+            <h3>Chat com o Mentor</h3>
+            <div class="chat-box" id="chatBox">
+                <!-- Mensagens serão adicionadas aqui dinamicamente -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatMessage" placeholder="Digite sua mensagem">
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </section>
+        
+        <section class="video-call">
+            <h3>Videochamada com o Mentor</h3>
+            <button onclick="startVideoCall()">Iniciar Videochamada</button>
+        </section>
+        
+
+        <footer>
+            <p>&copy; 2024 Mentorship Platform. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>

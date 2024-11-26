@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard do Mentor</title>
+    <link rel="stylesheet" href="styledashmentor.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Bem-vindo ao Dashboard do Mentor</h1>
+    </header>
+
+    <!-- Menu -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#" onclick="carregarConteudo('agendamentos')">Agendamentos</a></li>
+            <li><a href="#" onclick="carregarConteudo('criar-perfil')">Criar Perfil</a></li>
+            <li><a href="#" onclick="carregarConteudo('chat')">Chat e Vídeo Chamada</a></li>
+        </ul>
+    </nav>
+
+    <!-- Área de Conteúdo -->
+    <main id="conteudo">
+        <p>Selecione uma opção no menu para começar.</p>
+    </main>
+
+    <script >
+        function carregarConteudo(pagina) {
+            const conteudo = document.getElementById('conteudo');
+            if (pagina === 'agendamentos') {
+                conteudo.innerHTML = '<h2>Agendamentos</h2><p>Lista de agendamentos aparecerá aqui.</p>';
+            } else if (pagina === 'criar-perfil') {
+                conteudo.innerHTML = `
+                    <h2>Criar Perfil</h2>
+                    <form id="perfilForm">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" placeholder="Digite seu nome" required><br>
+                        <label for="especialidade">Especialidade:</label>
+                        <input type="text" id="especialidade" placeholder="Digite sua especialidade" required><br>
+                        <label for="experience">Experiência:</label>
+                        <textarea id="experience" name="experience" placeholder="Descreva a experiência do mentor" required></textarea>
+                        <label for="location">Localização:</label>
+                        <input type="text" id="location" name="location" placeholder="Digite a localização" required>
+                        <label for="biografia">Biografia:</label>
+                        <textarea id="biografia" placeholder="Digite sua biografia" required></textarea><br>
+                        <label for="email">E-mail para Contato:</label>
+                        <input type="email" id="email" placeholder="Digite seu e-mail de contato" required><br>
+                        <label for="linkedin">LinkedIn:</label>
+                        <input type="url" id="linkedin" placeholder="Digite o link do seu LinkedIn"><br>
+                        <label for="profile-picture">Foto de Perfil:</label>
+                        <input type="file" id="profile-picture" name="profile-picture" accept="image/*">
+                        <button type="submit">Salvar Perfil</button>
+                    </form>
+                `;
+            } else if (pagina === 'chat') {
+                conteudo.innerHTML = `
+                    <h2>Chat e Vídeo Chamada</h2>
+                    
+                    <p>A funcionalidade de chat e vídeo chamada será integrada aqui.</p>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
